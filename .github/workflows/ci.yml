@@ -41,9 +41,9 @@ jobs:
         with:
           host post: 3305
           container port: 3305
-          mysql database: ${{ RDS_NAME }}
-          mysql user: ${{ RDS_ID }}
-          mysql password: ${{ RDS_PASSWORD }}
+          mysql database: ${{ secrets.RDS_NAME }}
+          mysql user: ${{ secrets.RDS_ID }}
+          mysql password: ${{ secrets.RDS_PASSWORD }}
 
       - name: Make application-test.properties
         run: |
