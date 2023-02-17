@@ -9,7 +9,7 @@ permissions: write-all
 
 jobs:
   build:
-    runs-os: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
