@@ -54,9 +54,9 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_KEY }}
           envs: GITHUB_SHA
-          script:
-            docker stop ${{ secrets.DOCKER_REPO }} .
-            docker rm ${{ secrets.DOCKER_REPO }} .
-            sudo docker pull ${{ secrets.DOCKER_ID }}/${{ secrets.DOCKER_REPO }} .
-            docker run --name ${{ secrets.DOCKER_REPO }} -p 8080:8080 ${{ secrets.DOCKER_ID }}/${{ secrets.DOCKER_REPO }} .
-            docker rmi -f $(docker images -f "dangling=true" -q) .
+          script: |
+            docker stop ${{ secrets.DOCKER_REPO }}
+            docker rm ${{ secrets.DOCKER_REPO }} 
+            sudo docker pull ${{ secrets.DOCKER_ID }}/${{ secrets.DOCKER_REPO }} 
+            docker run --name ${{ secrets.DOCKER_REPO }} -p 8080:8080 ${{ secrets.DOCKER_ID }}/${{ secrets.DOCKER_REPO }}
+            docker rmi -f $(docker images -f "dangling=true" -q)
