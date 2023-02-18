@@ -45,11 +45,11 @@ jobs:
           mysql user: ${{ secrets.RDS_ID }}
           mysql password: ${{ secrets.RDS_PASSWORD }}
 
-      - name: Make application-test.properties
+      - name: Make application-test.yml
         run: |
           cd ./src/main/resources
-          touch ./application.properties
-          echo "${{ secrets.APPLICATION_TEST }}" > ./application.properties
+          touch ./application.yml
+          echo "${{ secrets.APPLICATION_TEST }}" > ./application.yml
         shell: bash
 
       - name: Build With Test

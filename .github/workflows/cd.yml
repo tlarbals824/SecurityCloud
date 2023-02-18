@@ -30,11 +30,11 @@ jobs:
             ${{ runner.os }}-gradle-
             
 
-      - name: Make application-prob.properties
+      - name: Make application-prod.yml
         run: |
           cd ./src/main/resources
-          touch ./application-prod.properties
-          echo "${{ secrets.APPLICATION_PROB }}" > ./application-prod.properties
+          touch ./application-prod.yml
+          echo "${{ secrets.APPLICATION_PROB }}" > ./application-prod.yml
         shell: bash
 
       - name: Build With Gradle
